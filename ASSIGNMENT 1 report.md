@@ -2,8 +2,7 @@
 
 **Student:** Yerkebulan Korganbek  
 **Group:** IT - 2501
-
-Part 1: Recursion with Numbers 
+# Part 1: Recursion with Numbers
 
 Task 1. Print Digits of a Number
 
@@ -38,7 +37,7 @@ Result:
 
 <img width="1808" height="294" alt="Task4" src="https://github.com/user-attachments/assets/693f03b2-7f3e-4655-88e5-ab02c64cdb48" />
 
-Part 2: Recursion with Sequences
+# Part 2: Recursion with Sequences
 
 Task 5. Fibonacci Number
 
@@ -65,7 +64,7 @@ Result:
 
 <img width="1812" height="338" alt="Task7" src="https://github.com/user-attachments/assets/c5ef5763-4608-49bc-bde2-ec34a4138ecd" />
 
-Part 3: Recursion with Strings
+# Part 3: Recursion with Strings
 
 Task 8. Check Digits in String
 
