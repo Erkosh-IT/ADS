@@ -50,6 +50,6 @@ Results:
 <img width="1772" height="220" alt="Task9 example2" src="https://github.com/user-attachments/assets/b6544415-cd79-4c0d-be67-e7eb819610f2" />
 
 Task 10. Greatest Common Divisor (GCD)I solved the problem of computing the greatest common divisor of two integers by implementing the Euclidean method. I recursively called gcd(b, a % b), using the modulus operator until the number was reduced to zero.
-Result<img width="1760" height="273" alt="Task10 example1" src="https://github.com/user-attachments/assets/572337c0-3687-42c0-8f4f-c588c577b4c6" />
-s:
+Results:
+<img width="1760" height="273" alt="Task10 example1" src="https://github.com/user-attachments/assets/572337c0-3687-42c0-8f4f-c588c577b4c6" />
 <img width="1754" height="152" alt="Task10 example2" src="https://github.com/user-attachments/assets/11112da1-d0d7-466c-bb81-26c59d8f8381" />
