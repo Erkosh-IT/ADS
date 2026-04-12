@@ -3,7 +3,7 @@ package Part3;
 import java.util.Scanner;
 
 public class Task8 {
-    public static boolean ALLdigit(String s, int index){
+    public static boolean ALLdigit(String s, int index) {
         if (index == s.length()){
             return true;
         }
@@ -11,9 +11,10 @@ public class Task8 {
         if (c < '0' || c > '9'){
             return false;
         }
-        return ALLdigit(s, index+1);
+        return ALLdigit(s, index + 1);
     }
-    public static void main(){
+
+    public static void main() {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
         if (ALLdigit(s, 0)){
@@ -24,3 +25,4 @@ public class Task8 {
         }
     }
 }
+//+++++

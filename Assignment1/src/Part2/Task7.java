@@ -2,7 +2,7 @@ package Part2;
 import java.util.Scanner;
 public class Task7 {
     public static void reverse(Scanner sc, int n){
-        if (n==0){
+        if (n == 0){
             return;
         }
         int current = sc.nextInt();

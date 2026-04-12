@@ -5,7 +5,7 @@ public class Task2 {
         if (n == 0){
             return 0;
         }
-        return sc.nextInt() + Sum(sc, n-1);
+        return sc.nextInt() + Sum(sc, n - 1);
     }
 public static void main(){
         Scanner sc = new Scanner(System.in);
@@ -13,5 +13,5 @@ public static void main(){
         int sum = Sum(sc, n);
         double avg = (double) sum / n;
         System.out.println(avg);
-}
+    }
 }

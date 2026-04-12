@@ -17,10 +17,10 @@ public class Task3 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         if (Prime(n, n/2)){
-            System.out.println("Prime");
+            System.out.println("prime");
         }
         else {
-            System.out.println("Composite");
+            System.out.println("composite");
         }
     }
 }
