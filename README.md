@@ -1,92 +1,90 @@
-# Assignment 1: Recursion (Algorithms and Data Structures)
+# Assignment #2. Physical & Logical Data Structures (Banking System) 
 
 **Student:** Yerkebulan Korganbek  
 **Group:** IT - 2501
-# Part 1: Recursion with Numbers
+# Project Overview
+This project simulates a banking environment to demonstrate the practical application of various data structures. It features three distinct interfaces: a Customer Bank Menu, an ATM Interface, and an Admin Panel.
+# Part 1. Logical Data Structures
+**Tasks 1 & 5** 
+<img width="1748" height="498" alt="image" src="https://github.com/user-attachments/assets/827c5324-522e-4b0f-9def-7d5f61dbad64" />
+<img width="1748" height="521" alt="image" src="https://github.com/user-attachments/assets/acfdfd67-da25-4476-b894-14f3d4089bff" />
+<img width="1748" height="290" alt="image" src="https://github.com/user-attachments/assets/7c7c6899-cc49-490e-9304-549415d8cec2" />
+<img width="1748" height="282" alt="image" src="https://github.com/user-attachments/assets/2f4dcefd-2d90-4172-a616-014ba0031d9b" />
+<img width="1740" height="241" alt="image" src="https://github.com/user-attachments/assets/3762cde5-3fc8-49a1-89e5-af27a17f79a9" />
+<img width="1747" height="388" alt="image" src="https://github.com/user-attachments/assets/acc4ad3e-5e4b-462c-b3cb-6f15e24520ff" />
+<img width="1757" height="202" alt="image" src="https://github.com/user-attachments/assets/bed32408-9d83-4171-b024-f6a32c46ff15" />
+<img width="1755" height="407" alt="image" src="https://github.com/user-attachments/assets/5c0a3337-ccb2-409c-a61b-e91b62bf2bd1" />
+<img width="1751" height="338" alt="image" src="https://github.com/user-attachments/assets/12c464c5-5a75-4f66-ada0-76b0a8c70665" />
+<img width="1746" height="329" alt="image" src="https://github.com/user-attachments/assets/9ec6afbd-8fab-4de7-836f-57a2d8ae3e95" />
+<img width="1749" height="332" alt="image" src="https://github.com/user-attachments/assets/782d30fc-b3f5-46b8-894c-fa6010565e4a" />
+<img width="1741" height="330" alt="image" src="https://github.com/user-attachments/assets/07e3c9cf-05e5-41ff-bde4-5a44b4fef375" />
 
-Task 1. Print Digits of a Number
+# 1. LinkedList: The Account Database (Task 1)
+For the main storage of active bank accounts, I utilized a LinkedList<BankAccount>.
 
-I have developed a method PrintNUM, which uses recursion to print the digits of a number one by one. The number moves forward by a factor of 10 until it becomes a single-digit number. After the recursion ends, the digits print from left to right using n % 10.
+Why LinkedList? In a real-world bank, the number of customers is constantly changing. A LinkedList allows for dynamic memory allocation, meaning we can add or remove accounts efficiently without the overhead of resizing a fixed-capacity array.
 
-Result:
+Functionality: It supports O(n) searching for accounts by username and O(1) insertion for new approved accounts.
 
-<img width="1816" height="324" alt="Task1" src="https://github.com/user-attachments/assets/2dc7aebe-0896-4eb1-a59f-5443e26dc9b5" />
+# 2. Stack: Transaction History & Undo Logic (Task 3)
+To track user actions (deposits, withdrawals, payments), I implemented a Stack<String>.
 
-Task 2. Average of Elements
+Theory (LIFO): A Stack follows the Last-In, First-Out principle. This is the ideal structure for an "Undo" feature because the most recent transaction is always at the "top" of the stack.
 
-I have developed a method Sum, which uses recursion to calculate the average of integers entered from standard input. The integers entered from standard input use a recursive approach without a loop. The next integer is entered using sc.nextInt() and added to the sum. The process ends until there are no more integers to enter.
+Operations: * push(): Records a new transaction.
 
-Result:
+pop(): Removes the latest transaction to "undo" an action.
 
-<img width="1820" height="311" alt="Task2" src="https://github.com/user-attachments/assets/887ef730-28fb-48b7-bb5d-dfb632a5fdf0" />
+peek(): Allows the admin to view the most recent activity without removing it.
 
-Task 3. Prime Number Check
+# 3. Queue: Request & Bill Processing (Tasks 4 & 5)
+I utilized two separate Queue structures to manage pending operations: accountRequests and billQueue.
 
-I have developed a method Prime, which uses recursion to determine whether a number is prime or not. The method uses a loop to divide the number by all integers from 2 to n/2. If n <= 1, the method returns false. If the loop ends without a remainder, the method returns true. If n % div == 0, the method returns false.
+Theory (FIFO): A Queue follows the First-In, First-Out principle. This ensures "fairness" in the banking system—the first customer to request an account or submit a bill is the first one to be processed by the administrator.
 
-Results:
+**Application:**
 
-<img width="1719" height="202" alt="Task3 example1" src="https://github.com/user-attachments/assets/aed36c7b-9ca8-4d11-b28d-570de4909048" />
-<img width="1805" height="304" alt="Task3 example2" src="https://github.com/user-attachments/assets/f3fe5574-e52b-4e9d-a926-789aec4b62f2" />
+Account Queue: Holds new applications until an Admin approves them, moving them from the Queue into the main LinkedList.
 
-Task 4. Factorial
+Bill Queue: Manages utility payments in the order they were received, preventing data congestion during high-traffic periods.
 
-I have developed a method, which uses recursion to calculate the factorial of a number. The factorial is defined as n! = n*(n-1)!.
 
-Result:
+# Part 2. Physical Data Structures 
+**Task 6**
 
-<img width="1808" height="294" alt="Task4" src="https://github.com/user-attachments/assets/693f03b2-7f3e-4655-88e5-ab02c64cdb48" />
 
-# Part 2: Recursion with Sequences
+<img width="472" height="403" alt="image" src="https://github.com/user-attachments/assets/c8fe66c4-1731-40bf-b2a5-d32790a6f98e" />
 
-Task 5. Fibonacci Number
 
-I have developed a method fibonacci, which uses additive recursion to find the nth Fibonacci number. The nth Fibonacci number is equal to the sum of the two preceding numbers. The method calls itself twice to find the two preceding Fibonacci numbers.
+Unlike the dynamic LinkedList, this task demonstrates the use of a physical structure with a fixed size.
 
-Results:
+Structure: BankAccount[3]
 
-<img width="1805" height="292" alt="Task5 example1" src="https://github.com/user-attachments/assets/4223c615-d3a3-4b62-8453-631a358a9817" />
-<img width="1813" height="280" alt="Task5 example2" src="https://github.com/user-attachments/assets/8bd80d47-dbe6-4bd2-9201-0d24c2220239" />
+Function: Stores and prints three predefined accounts.
 
-Task 6. Power Function
+# Part 3. Mini Banking Menu
+<img width="271" height="181" alt="image" src="https://github.com/user-attachments/assets/7ece9cd2-97be-4739-86f5-d5e3c6b04427" />
 
-I created the POWER function, which calculates the value of a^n by recursive multiplication. I simply multiply the base number 'a' by the recursive call to POWER(a, n - 1) and do that 'n' times, depending on the depth of the recursion.
 
-Result:
+<img width="363" height="204" alt="image" src="https://github.com/user-attachments/assets/ce5928cc-ef5a-41ca-933e-26afbec13637" />
 
-<img width="1809" height="287" alt="Task6" src="https://github.com/user-attachments/assets/9a4522ea-833a-4fcc-a654-7df79936d9a1" />
 
-Task 7. Reverse Output
+<img width="319" height="152" alt="image" src="https://github.com/user-attachments/assets/f1873e45-3b34-4b91-85eb-ed74d0bfd651" />
 
-I created the reverse method, which reads 'n' integers and then reverses the output without the use of arrays and loops. I used a local variable 'current' to hold the value read by 'sc.nextInt()' before the recursive call.
 
-Result:
+<img width="439" height="300" alt="image" src="https://github.com/user-attachments/assets/7f052120-40f5-4f14-9047-676ef97e1b02" />
 
-<img width="1812" height="338" alt="Task7" src="https://github.com/user-attachments/assets/c5ef5763-4608-49bc-bde2-ec34a4138ecd" />
 
-# Part 3: Recursion with Strings
+This is the "Full System" where all logical structures are integrated into a single user-friendly menu.
 
-Task 8. Check Digits in String
+**Available Interfaces**
 
-I developed the ALLdigit method, which checks if a string is composed of digits only. To accomplish this, I compared the character at hand and called the method recursively by calling ALLdigit(s, index + 1).
 
-Results:
+Bank Menu: Submit requests, deposit/withdraw, and submit bills.
 
-<img width="1763" height="228" alt="Task8 example1" src="https://github.com/user-attachments/assets/b2d07215-94d1-4bc4-a92b-24370b23378d" />
-<img width="1765" height="231" alt="Task8 example2" src="https://github.com/user-attachments/assets/7049e995-530a-4d8c-b6b0-8238e466ee8e" />
+ATM Menu: Quick balance checks and cash withdrawals.
 
-Task 9. Count Characters in a String
+Admin Panel: Process queues (Accounts/Bills), view all users, and undo mistakes.
 
-I developed a count method, which computes the length of a string recursively without using the .length() method of a string object. I added 1 to count(s.substring(1)) by slicing the string until it was empty.
 
-Results:
-<img width="1749" height="209" alt="Task9 example1" src="https://github.com/user-attachments/assets/7edf3b54-4264-4fd5-99d1-b7477aa4fbb6" />
-<img width="1772" height="220" alt="Task9 example2" src="https://github.com/user-attachments/assets/b6544415-cd79-4c0d-be67-e7eb819610f2" />
 
-Task 10. Greatest Common Divisor (GCD)
-
-I solved the problem of computing the greatest common divisor of two integers by implementing the Euclidean method. I recursively called gcd(b, a % b), using the modulus operator until the number was reduced to zero.
-
-Results:
-<img width="1760" height="273" alt="Task10 example1" src="https://github.com/user-attachments/assets/572337c0-3687-42c0-8f4f-c588c577b4c6" />
-<img width="1754" height="152" alt="Task10 example2" src="https://github.com/user-attachments/assets/11112da1-d0d7-466c-bb81-26c59d8f8381" />
