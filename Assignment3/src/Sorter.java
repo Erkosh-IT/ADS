@@ -1,7 +1,5 @@
 import java.util.Random;
-
 public class Sorter {
-
     public void basicSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
@@ -14,11 +12,9 @@ public class Sorter {
             }
         }
     }
-
     public void advancedSort(int[] arr) {
         quickSort(arr, 0, arr.length - 1);
     }
-
     private void quickSort(int[] arr, int low, int high) {
         if (low < high) {
             int pi = partition(arr, low, high);
@@ -26,7 +22,6 @@ public class Sorter {
             quickSort(arr, pi + 1, high);
         }
     }
-
     private int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = (low - 1);
@@ -43,7 +38,6 @@ public class Sorter {
         arr[high] = temp;
         return i + 1;
     }
-
     public void printArray(int[] arr) {
         int limit = Math.min(arr.length, 20);
         for (int i = 0; i < limit; i++) {
@@ -54,7 +48,6 @@ public class Sorter {
         }
         System.out.println();
     }
-
     public int[] generateRandomArray(int size) {
         Random random = new Random();
         int[] arr = new int[size];
