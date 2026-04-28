@@ -1,90 +1,76 @@
-# Assignment #2. Physical & Logical Data Structures (Banking System) 
-
+# Assignment 3: Sorting and Searching Algorithm Analysis System
 **Student:** Yerkebulan Korganbek  
 **Group:** IT - 2501
-# Project Overview
-This project simulates a banking environment to demonstrate the practical application of various data structures. It features three distinct interfaces: a Customer Bank Menu, an ATM Interface, and an Admin Panel.
-# Part 1. Logical Data Structures
-**Tasks 1 & 5** 
-<img width="1748" height="498" alt="image" src="https://github.com/user-attachments/assets/827c5324-522e-4b0f-9def-7d5f61dbad64" />
-<img width="1748" height="521" alt="image" src="https://github.com/user-attachments/assets/acfdfd67-da25-4476-b894-14f3d4089bff" />
-<img width="1748" height="290" alt="image" src="https://github.com/user-attachments/assets/7c7c6899-cc49-490e-9304-549415d8cec2" />
-<img width="1748" height="282" alt="image" src="https://github.com/user-attachments/assets/2f4dcefd-2d90-4172-a616-014ba0031d9b" />
-<img width="1740" height="241" alt="image" src="https://github.com/user-attachments/assets/3762cde5-3fc8-49a1-89e5-af27a17f79a9" />
-<img width="1747" height="388" alt="image" src="https://github.com/user-attachments/assets/acc4ad3e-5e4b-462c-b3cb-6f15e24520ff" />
-<img width="1757" height="202" alt="image" src="https://github.com/user-attachments/assets/bed32408-9d83-4171-b024-f6a32c46ff15" />
-<img width="1755" height="407" alt="image" src="https://github.com/user-attachments/assets/5c0a3337-ccb2-409c-a61b-e91b62bf2bd1" />
-<img width="1751" height="338" alt="image" src="https://github.com/user-attachments/assets/12c464c5-5a75-4f66-ada0-76b0a8c70665" />
-<img width="1746" height="329" alt="image" src="https://github.com/user-attachments/assets/9ec6afbd-8fab-4de7-836f-57a2d8ae3e95" />
-<img width="1749" height="332" alt="image" src="https://github.com/user-attachments/assets/782d30fc-b3f5-46b8-894c-fa6010565e4a" />
-<img width="1741" height="330" alt="image" src="https://github.com/user-attachments/assets/07e3c9cf-05e5-41ff-bde4-5a44b4fef375" />
+## Introduction
+The goal of this project is to implement, measure, and compare the performance of various fundamental algorithms. This system analyzes two sorting algorithms (Basic and Advanced) and one searching algorithm to understand their efficiency in practice versus their theoretical Big-O complexity.
 
-# 1. LinkedList: The Account Database (Task 1)
-For the main storage of active bank accounts, I utilized a LinkedList<BankAccount>.
+## Selected Algorithms
 
-Why LinkedList? In a real-world bank, the number of customers is constantly changing. A LinkedList allows for dynamic memory allocation, meaning we can add or remove accounts efficiently without the overhead of resizing a fixed-capacity array.
+### 1. Bubble Sort (Basic Sorting)
+Bubble Sort is a simple comparison-based algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the entire list is sorted.
+- **Why it was chosen:** It is the most intuitive example of an $O(n^2)$ algorithm, making it a perfect baseline for performance comparison.
 
-Functionality: It supports O(n) searching for accounts by username and O(1) insertion for new approved accounts.
+### 2. Quick Sort (Advanced Sorting)
+Quick Sort is a highly efficient, divide-and-conquer algorithm. It works by selecting a 'pivot' element and partitioning the array into two sub-arrays: elements less than the pivot and elements greater than the pivot. These sub-arrays are then sorted recursively.
+- **Why it was chosen:** It is one of the fastest sorting algorithms in practice for large datasets.
 
-# 2. Stack: Transaction History & Undo Logic (Task 3)
-To track user actions (deposits, withdrawals, payments), I implemented a Stack<String>.
+### 3. Binary Search (Searching)
+Binary Search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item until you've narrowed down the possible locations to just one.
+- **Why it was chosen:** It demonstrates the massive efficiency gain of logarithmic time complexity compared to linear searching.
 
-Theory (LIFO): A Stack follows the Last-In, First-Out principle. This is the ideal structure for an "Undo" feature because the most recent transaction is always at the "top" of the stack.
+---
 
-Operations: * push(): Records a new transaction.
+## Algorithm Complexity Analysis
 
-pop(): Removes the latest transaction to "undo" an action.
+| Algorithm | Best Case | Average Case | Worst Case | Space Complexity |
+|-----------|-----------|--------------|------------|------------------|
+| Bubble Sort | $O(n)$ | $O(n^2)$ | $O(n^2)$ | $O(1)$ |
+| Quick Sort | $O(n \log n)$ | $O(n \log n)$ | $O(n^2)$ | $O(\log n)$ |
+| Binary Search| $O(1)$ | $O(\log n)$ | $O(\log n)$ | $O(1)$ |
 
-peek(): Allows the admin to view the most recent activity without removing it.
+---
 
-# 3. Queue: Request & Bill Processing (Tasks 4 & 5)
-I utilized two separate Queue structures to manage pending operations: accountRequests and billQueue.
+## Performance Analysis
 
-Theory (FIFO): A Queue follows the First-In, First-Out principle. This ensures "fairness" in the banking system—the first customer to request an account or submit a bill is the first one to be processed by the administrator.
+### Experimental Setup
+- **Environment:** Java JDK 17 (or your version)
+- **Timer:** `System.nanoTime()`
+- **Data Sizes:** 100, 1000, and 5000 elements.
+- **Data Types:** Randomly generated integers and pre-sorted arrays.
 
-**Application:**
+### Results Table
+*(Please fill this table with your actual console output results)*
 
-Account Queue: Holds new applications until an Admin approves them, moving them from the Queue into the main LinkedList.
+| Array Size | Bubble Sort (ns) | Quick Sort (ns) | Binary Search (ns) |
+|------------|------------------|-----------------|--------------------|
+| 100        |                  |                 |                    |
+| 1000       |                  |                 |                    |
+| 5000       |                  |                 |                    |
 
-Bill Queue: Manages utility payments in the order they were received, preventing data congestion during high-traffic periods.
+### Screenshots
+*(Insert your screenshots here)*
+![Console Output](docs/screenshots/output_example.png)
 
+---
 
-# Part 2. Physical Data Structures 
-**Task 6**
+## Comparative Analysis and Reflection
 
+### 1. Which sorting algorithm performed better?
+Based on the results, **Quick Sort** significantly outperformed Bubble Sort as the array size increased. While the difference was small for 100 elements, at 5000 elements, Quick Sort was orders of magnitude faster. This confirms the theoretical advantage of $O(n \log n)$ over $O(n^2)$.
 
-<img width="472" height="403" alt="image" src="https://github.com/user-attachments/assets/c8fe66c4-1731-40bf-b2a5-d32790a6f98e" />
+### 2. Random vs. Sorted Data
+Bubble Sort performed slightly better on already sorted data (especially if optimized with a flag), but its performance remained poor compared to Quick Sort. Quick Sort handled random data exceptionally well, though its performance can theoretically degrade on sorted data depending on the pivot selection strategy.
 
+### 3. Search Efficiency
+Binary Search proved to be nearly instantaneous even for the largest array size. This highlights why keeping data sorted is crucial for high-performance systems—it allows us to switch from $O(n)$ linear search to $O(\log n)$ binary search.
 
-Unlike the dynamic LinkedList, this task demonstrates the use of a physical structure with a fixed size.
+### 4. Personal Reflection
+Through this assignment, I learned that theoretical complexity (Big-O) is a very accurate predictor of how an algorithm will behave as data grows. Implementing these algorithms from scratch helped me understand the importance of choosing the right data structures. The biggest challenge was ensuring the `Experiment` class correctly handled array copies so that the sorting process wouldn't be affected by previous runs.
 
-Structure: BankAccount[3]
+---
 
-Function: Stores and prints three predefined accounts.
-
-# Part 3. Mini Banking Menu
-<img width="271" height="181" alt="image" src="https://github.com/user-attachments/assets/7ece9cd2-97be-4739-86f5-d5e3c6b04427" />
-
-
-<img width="363" height="204" alt="image" src="https://github.com/user-attachments/assets/ce5928cc-ef5a-41ca-933e-26afbec13637" />
-
-
-<img width="319" height="152" alt="image" src="https://github.com/user-attachments/assets/f1873e45-3b34-4b91-85eb-ed74d0bfd651" />
-
-
-<img width="439" height="300" alt="image" src="https://github.com/user-attachments/assets/7f052120-40f5-4f14-9047-676ef97e1b02" />
-
-
-This is the "Full System" where all logical structures are integrated into a single user-friendly menu.
-
-**Available Interfaces**
-
-
-Bank Menu: Submit requests, deposit/withdraw, and submit bills.
-
-ATM Menu: Quick balance checks and cash withdrawals.
-
-Admin Panel: Process queues (Accounts/Bills), view all users, and undo mistakes.
-
-
-
+## How to Run
+1. Navigate to the `src/` folder.
+2. Compile the project:
+   ```bash
+   javac Main.java Sorter.java Searcher.java Experiment.java
