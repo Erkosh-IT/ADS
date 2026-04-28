@@ -39,17 +39,15 @@ Binary Search is an efficient algorithm for finding an item from a sorted list o
 - **Data Types:** Randomly generated integers and pre-sorted arrays.
 
 ### Results Table
-*(Please fill this table with your actual console output results)*
 
 | Array Size | Bubble Sort (ns) | Quick Sort (ns) | Binary Search (ns) |
 |------------|------------------|-----------------|--------------------|
-| 100        |                  |                 |                    |
-| 1000       |                  |                 |                    |
-| 5000       |                  |                 |                    |
+| 100        |            288100 ns      |    47500 ns             |       3800 ns             |
+| 1000       |       5163900 ns           |    390500 ns             |      2400 ns              |
+| 5000       |      12934800 ns            |     403700 ns            |       2000 ns              |
 
 ### Screenshots
-*(Insert your screenshots here)*
-![Console Output](docs/screenshots/output_example.png)
+<img width="1203" height="316" alt="Result" src="https://github.com/user-attachments/assets/5bb6ba89-1fda-46a9-9650-d8d2b4626d97" />
 
 ---
 
@@ -66,11 +64,3 @@ Binary Search proved to be nearly instantaneous even for the largest array size.
 
 ### 4. Personal Reflection
 Through this assignment, I learned that theoretical complexity (Big-O) is a very accurate predictor of how an algorithm will behave as data grows. Implementing these algorithms from scratch helped me understand the importance of choosing the right data structures. The biggest challenge was ensuring the `Experiment` class correctly handled array copies so that the sorting process wouldn't be affected by previous runs.
-
----
-
-## How to Run
-1. Navigate to the `src/` folder.
-2. Compile the project:
-   ```bash
-   javac Main.java Sorter.java Searcher.java Experiment.java
