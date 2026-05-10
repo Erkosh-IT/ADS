@@ -47,7 +47,12 @@ To ensure a comprehensive analysis, I tested the algorithms not only on differen
 6.  **What are the limitations of DFS?** DFS can lead to a `StackOverflowError` if the graph is extremely deep (like a very long line), and it does not guarantee the shortest path to a node.
 
 ## E. Screenshots
-*(Attach your screenshots here)*
+<img width="274" height="101" alt="LARGE GRAPH" src="https://github.com/user-attachments/assets/d003205a-ce88-41cc-8758-cd2a6e2425d2" />
+<img width="356" height="336" alt="SMALL GRAPH" src="https://github.com/user-attachments/assets/cfffcc43-42ab-4caa-84d0-e038afe1f808" />
+<img width="290" height="106" alt="MEDIUM GRAPH" src="https://github.com/user-attachments/assets/4ef7dd8f-38e1-47f9-8d1b-29444f3447ef" />
+<img width="919" height="623" alt="Снимок экрана 2026-05-10 161334" src="https://github.com/user-attachments/assets/831e41e1-8662-44fb-af37-ffa99a8786b6" />
+<img width="1198" height="458" alt="Снимок экрана 2026-05-10 161309" src="https://github.com/user-attachments/assets/10975ba2-c995-480a-98bc-4132446ad473" />
+
 1. **Graph Structure Output**: Showing the Adjacency List.
 2. **Traversal Output**: Showing BFS Path and DFS Path for the 10-vertex graph.
 3. **Performance Table**: The console output from the `Experiment` class.
