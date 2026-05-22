@@ -47,7 +47,12 @@ To ensure a comprehensive analysis, I tested the algorithms not only on differen
 6.  **What are the limitations of DFS?** DFS can lead to a `StackOverflowError` if the graph is extremely deep (like a very long line), and it does not guarantee the shortest path to a node.
 
 ## E. Screenshots
-*(Attach your screenshots here)*
+<img width="274" height="101" alt="LARGE GRAPH" src="https://github.com/user-attachments/assets/d003205a-ce88-41cc-8758-cd2a6e2425d2" />
+<img width="356" height="336" alt="SMALL GRAPH" src="https://github.com/user-attachments/assets/cfffcc43-42ab-4caa-84d0-e038afe1f808" />
+<img width="290" height="106" alt="MEDIUM GRAPH" src="https://github.com/user-attachments/assets/4ef7dd8f-38e1-47f9-8d1b-29444f3447ef" />
+<img width="919" height="623" alt="Снимок экрана 2026-05-10 161334" src="https://github.com/user-attachments/assets/831e41e1-8662-44fb-af37-ffa99a8786b6" />
+<img width="1198" height="458" alt="Снимок экрана 2026-05-10 161309" src="https://github.com/user-attachments/assets/10975ba2-c995-480a-98bc-4132446ad473" />
+
 1. **Graph Structure Output**: Showing the Adjacency List.
 2. **Traversal Output**: Showing BFS Path and DFS Path for the 10-vertex graph.
 3. **Performance Table**: The console output from the `Experiment` class.
@@ -56,3 +61,17 @@ To ensure a comprehensive analysis, I tested the algorithms not only on differen
 During this assignment, I learned how to transform theoretical graph concepts into a working Java system. The most important realization was the importance of testing different graph **densities**. Just like in the previous assignment where I learned that sorted arrays change search performance, I now see that a **Dense** graph (many edges) significantly slows down traversal compared to a **Sparse** one, even if the number of nodes is identical.
 
 I also improved my understanding of how the choice of data structures (like using a `Map` for the Adjacency List) affects the ease of implementing algorithms. BFS and DFS are powerful tools, and seeing them work on my own custom graph was very rewarding.
+
+## G. Bonus Task: Dijkstra's Algorithm
+As part of the bonus task, the graph representation was expanded to support **Edge Weights** by updating the `Edge` class to include a `weight` field. 
+
+**Implementation Details:**
+* The algorithm solves the single-source shortest-paths problem for a graph with non-negative edge weights.
+* It tracks the minimum distance from the `start` vertex to all other vertices using a `Map<Integer, Double>`.
+* As requested by the assignment guidelines, the implementation uses **simple loops** rather than a `PriorityQueue`. In each iteration, it scans the unvisited vertices to find the one with the smallest tentative distance, marks it as visited, and relaxes the distances to all its unvisited neighbors.
+* **Time Complexity:** $O(V^2)$ because we scan all $V$ vertices to find the minimum distance in each of the $V$ iterations. For a simple implementation using arrays/loops, this is the expected behavior.
+
+**Output:**
+<img width="502" height="294" alt="image" src="https://github.com/user-attachments/assets/19812d86-21c2-4a07-94ce-3325bf1aa9aa" />
+
+The `dijkstra(int start)` method successfully prints a formatted table displaying the shortest computed cost to reach every vertex in the network from the starting node.
