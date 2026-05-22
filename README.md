@@ -72,4 +72,6 @@ As part of the bonus task, the graph representation was expanded to support **Ed
 * **Time Complexity:** $O(V^2)$ because we scan all $V$ vertices to find the minimum distance in each of the $V$ iterations. For a simple implementation using arrays/loops, this is the expected behavior.
 
 **Output:**
+<img width="502" height="294" alt="image" src="https://github.com/user-attachments/assets/19812d86-21c2-4a07-94ce-3325bf1aa9aa" />
+
 The `dijkstra(int start)` method successfully prints a formatted table displaying the shortest computed cost to reach every vertex in the network from the starting node.
