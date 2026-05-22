@@ -61,3 +61,15 @@ To ensure a comprehensive analysis, I tested the algorithms not only on differen
 During this assignment, I learned how to transform theoretical graph concepts into a working Java system. The most important realization was the importance of testing different graph **densities**. Just like in the previous assignment where I learned that sorted arrays change search performance, I now see that a **Dense** graph (many edges) significantly slows down traversal compared to a **Sparse** one, even if the number of nodes is identical.
 
 I also improved my understanding of how the choice of data structures (like using a `Map` for the Adjacency List) affects the ease of implementing algorithms. BFS and DFS are powerful tools, and seeing them work on my own custom graph was very rewarding.
+
+## G. Bonus Task: Dijkstra's Algorithm
+As part of the bonus task, the graph representation was expanded to support **Edge Weights** by updating the `Edge` class to include a `weight` field. 
+
+**Implementation Details:**
+* The algorithm solves the single-source shortest-paths problem for a graph with non-negative edge weights.
+* It tracks the minimum distance from the `start` vertex to all other vertices using a `Map<Integer, Double>`.
+* As requested by the assignment guidelines, the implementation uses **simple loops** rather than a `PriorityQueue`. In each iteration, it scans the unvisited vertices to find the one with the smallest tentative distance, marks it as visited, and relaxes the distances to all its unvisited neighbors.
+* **Time Complexity:** $O(V^2)$ because we scan all $V$ vertices to find the minimum distance in each of the $V$ iterations. For a simple implementation using arrays/loops, this is the expected behavior.
+
+**Output:**
+The `dijkstra(int start)` method successfully prints a formatted table displaying the shortest computed cost to reach every vertex in the network from the starting node.
