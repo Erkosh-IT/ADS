@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
+        Experiment experiment = new Experiment();
+        experiment.runMultipleTests();
         System.out.println("=== BONUS TASK: DIJKSTRA'S ALGORITHM ===\n");
         Graph g = new Graph();
         for (int i = 0; i <= 4; i++) g.addVertex(new Vertex(i));

@@ -17,7 +17,6 @@ public class Graph {
     public void addEdge(int from, int to, double weight) {
         Vertex source = vertices.get(from);
         Vertex dest = vertices.get(to);
-
         if (source != null && dest != null) {
             adjList.get(from).add(new Edge(source, dest, weight));
             adjList.get(to).add(new Edge(dest, source, weight));
