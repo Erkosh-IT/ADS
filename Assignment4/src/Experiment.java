@@ -53,7 +53,8 @@ public class Experiment {
             int u = rand.nextInt(verticesCount);
             int v = rand.nextInt(verticesCount);
             if (u != v) {
-                g.addEdge(u, v);
+                double randomWeight = 1.0 + rand.nextDouble() * 9.0;
+                g.addEdge(u, v, randomWeight);
                 addedEdges++;
             }
         }
